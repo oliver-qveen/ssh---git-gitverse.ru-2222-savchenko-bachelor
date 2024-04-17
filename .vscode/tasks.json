@@ -1,0 +1,49 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "typescript",
+			"tsconfig": "tsconfig.json",
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"label": "tsc server"
+		},
+		{
+			"type": "typescript",
+			"tsconfig": "tsconfig-auth.json",
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"label": "tsc auth"
+		},
+		{
+			"type": "typescript",
+			"tsconfig": "tsconfig-client.json",
+			"problemMatcher": [
+				"$tsc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"label": "tsc client"
+		},
+		{
+			"label": "Build",
+			"dependsOn": [
+				"tsc server",
+				"tsc client",
+				"tsc auth"
+			]
+		}
+	]
+}
